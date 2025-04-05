@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Presentacion;
-import Presentacion.PantallaRegistroReservacion;
+
 import javax.swing.JOptionPane;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -14,12 +14,14 @@ import javax.swing.JLabel;
  */
 public class PantallaMesas extends javax.swing.JFrame {
 
+    PantallaRegistroReservacion RR;
+
     /**
      * Creates new form PantallaInicio
      */
     public PantallaMesas() {
         initComponents();
-    
+
     }
 
     /**
@@ -33,8 +35,8 @@ public class PantallaMesas extends javax.swing.JFrame {
 
         jButton2 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btnMesa1 = new javax.swing.JButton();
+        btnAtras = new javax.swing.JButton();
         fondo = new javax.swing.JLabel();
 
         jButton2.setText("Atrás");
@@ -49,20 +51,30 @@ public class PantallaMesas extends javax.swing.JFrame {
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setBackground(new java.awt.Color(0, 204, 204));
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
-        jButton1.setText("M1");
-        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 130, 50, 40));
+        btnMesa1.setBackground(new java.awt.Color(0, 204, 204));
+        btnMesa1.setForeground(new java.awt.Color(0, 0, 0));
+        btnMesa1.setText("M1");
+        btnMesa1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMesa1ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnMesa1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 130, 50, 40));
 
-        jButton3.setBackground(new java.awt.Color(0, 204, 204));
-        jButton3.setForeground(new java.awt.Color(0, 0, 0));
-        jButton3.setText("Atras");
-        jPanel2.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, -1, -1));
+        btnAtras.setBackground(new java.awt.Color(0, 204, 204));
+        btnAtras.setForeground(new java.awt.Color(0, 0, 0));
+        btnAtras.setText("Atras");
+        btnAtras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAtrasActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, -1, -1));
 
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/fondoResta.jpg"))); // NOI18N
         jPanel2.add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 670, 460));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 590, 460));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 670, 460));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -73,6 +85,18 @@ public class PantallaMesas extends javax.swing.JFrame {
         PantallaInicio pantalla = new PantallaInicio();
         pantalla.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void btnMesa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMesa1ActionPerformed
+        RR = new PantallaRegistroReservacion();
+        RR.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnMesa1ActionPerformed
+
+    private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
+        PantallaInicio pantalla = new PantallaInicio();
+        pantalla.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnAtrasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -111,10 +135,10 @@ public class PantallaMesas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAtras;
+    private javax.swing.JButton btnMesa1;
     private javax.swing.JLabel fondo;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
 }

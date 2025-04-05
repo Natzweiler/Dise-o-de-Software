@@ -12,6 +12,8 @@ import javax.swing.JOptionPane;
  */
 public class PantallaRegistroMeseros extends javax.swing.JFrame {
 
+    PantallaMenuMeseros MM;
+
     /**
      * Creates new form PantallaRegistroMeseros
      */
@@ -37,8 +39,8 @@ public class PantallaRegistroMeseros extends javax.swing.JFrame {
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
         jTextField4 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnAtras = new javax.swing.JButton();
+        btnRegistrarMesero = new javax.swing.JButton();
         fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -69,18 +71,23 @@ public class PantallaRegistroMeseros extends javax.swing.JFrame {
         jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 170, -1));
         jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, 190, -1));
 
-        jButton1.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
-        jButton1.setText("Atras");
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 413, 100, 40));
-
-        jButton2.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
-        jButton2.setText("Registrar Empleado");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnAtras.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        btnAtras.setText("Atras");
+        btnAtras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnAtrasActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(445, 363, 170, 50));
+        jPanel1.add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 413, 100, 40));
+
+        btnRegistrarMesero.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        btnRegistrarMesero.setText("Registrar Empleado");
+        btnRegistrarMesero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistrarMeseroActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnRegistrarMesero, new org.netbeans.lib.awtextra.AbsoluteConstraints(445, 363, 170, 50));
 
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/fondoResta.jpg"))); // NOI18N
         jPanel1.add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 670, 470));
@@ -99,9 +106,18 @@ public class PantallaRegistroMeseros extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void btnRegistrarMeseroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarMeseroActionPerformed
+        JOptionPane.showMessageDialog(null, "Mesero Registrado con Exito");
+        MM = new PantallaMenuMeseros();
+        MM.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnRegistrarMeseroActionPerformed
+
+    private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
+        MM = new PantallaMenuMeseros();
+        MM.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnAtrasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -139,9 +155,9 @@ public class PantallaRegistroMeseros extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAtras;
+    private javax.swing.JButton btnRegistrarMesero;
     private javax.swing.JLabel fondo;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

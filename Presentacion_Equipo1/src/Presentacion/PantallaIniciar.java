@@ -3,14 +3,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Presentacion;
-import Presentacion.PantallaRegistroReservacion;
+
 import javax.swing.JOptionPane;
 /**
  *
  * @author Gael
  */
 public class PantallaIniciar extends javax.swing.JFrame {
-
+PantallaInicio pi ;
     /**
      * Creates new form PantallaInicio
      */
@@ -29,7 +29,7 @@ public class PantallaIniciar extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btnIniciar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(204, 204, 0));
@@ -42,12 +42,12 @@ public class PantallaIniciar extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         jLabel1.setText("Reservaciones");
 
-        jButton1.setBackground(new java.awt.Color(204, 0, 204));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        jButton1.setText("Iniciar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnIniciar.setBackground(new java.awt.Color(204, 0, 204));
+        btnIniciar.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        btnIniciar.setText("Iniciar");
+        btnIniciar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnIniciarActionPerformed(evt);
             }
         });
 
@@ -62,7 +62,7 @@ public class PantallaIniciar extends javax.swing.JFrame {
                         .addComponent(jLabel1)
                         .addGap(82, 82, 82))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton1)
+                        .addComponent(btnIniciar)
                         .addGap(132, 132, 132))))
         );
         jPanel1Layout.setVerticalGroup(
@@ -71,7 +71,7 @@ public class PantallaIniciar extends javax.swing.JFrame {
                 .addGap(20, 20, 20)
                 .addComponent(jLabel1)
                 .addGap(79, 79, 79)
-                .addComponent(jButton1)
+                .addComponent(btnIniciar)
                 .addContainerGap(98, Short.MAX_VALUE))
         );
 
@@ -89,9 +89,11 @@ public class PantallaIniciar extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void btnIniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarActionPerformed
+    pi = new PantallaInicio();
+        pi.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnIniciarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -130,7 +132,7 @@ public class PantallaIniciar extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnIniciar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables

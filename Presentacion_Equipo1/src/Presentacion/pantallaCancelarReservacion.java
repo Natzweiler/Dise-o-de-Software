@@ -11,7 +11,11 @@ import javax.swing.JOptionPane;
  * @author Gael
  */
 public class pantallaCancelarReservacion extends javax.swing.JFrame {
+PantallaInicio PI;
 
+    
+    
+    
     /**
      * Creates new form PantallaRegistroReservacion
      */
@@ -40,8 +44,8 @@ public class pantallaCancelarReservacion extends javax.swing.JFrame {
         jTextField3 = new javax.swing.JTextField();
         jTextField4 = new javax.swing.JTextField();
         jTextField5 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnConfirmarCancelacion = new javax.swing.JButton();
+        btnAtras = new javax.swing.JButton();
         Fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -84,13 +88,23 @@ public class pantallaCancelarReservacion extends javax.swing.JFrame {
         jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 270, 180, -1));
         jPanel1.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 330, 160, -1));
 
-        jButton1.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
-        jButton1.setText("Confirmar Cancelacion");
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 350, -1, -1));
+        btnConfirmarCancelacion.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
+        btnConfirmarCancelacion.setText("Confirmar Reservacion");
+        btnConfirmarCancelacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConfirmarCancelacionActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnConfirmarCancelacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 350, -1, -1));
 
-        jButton2.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
-        jButton2.setText("Atras");
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, -1, -1));
+        btnAtras.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
+        btnAtras.setText("Atras");
+        btnAtras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAtrasActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, -1, -1));
 
         Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/fondoResta.jpg"))); // NOI18N
         jPanel1.add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 670, 460));
@@ -108,6 +122,21 @@ public class pantallaCancelarReservacion extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnConfirmarCancelacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarCancelacionActionPerformed
+        JOptionPane.showMessageDialog(null, "Cancelacion Exitosa");
+        PI = new PantallaInicio();
+        PI.setVisible(true);
+        this.dispose();
+        
+    }//GEN-LAST:event_btnConfirmarCancelacionActionPerformed
+
+    private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
+        
+        PI = new PantallaInicio();
+        PI.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnAtrasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -147,8 +176,8 @@ public class pantallaCancelarReservacion extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Fondo;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btnAtras;
+    private javax.swing.JButton btnConfirmarCancelacion;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

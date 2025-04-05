@@ -11,6 +11,7 @@ import javax.swing.JOptionPane;
  * @author Gael
  */
 public class pantallaRegistroCliente extends javax.swing.JFrame {
+PantallaInicio PI;
 
     /**
      * Creates new form PantallaRegistroCliente
@@ -32,8 +33,8 @@ public class pantallaRegistroCliente extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnAtras = new javax.swing.JButton();
+        btnRegistrarCliente = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
@@ -59,13 +60,23 @@ public class pantallaRegistroCliente extends javax.swing.JFrame {
         jLabel3.setText("Correo:");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, -1, -1));
 
-        jButton1.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
-        jButton1.setText("Atras");
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 440, -1, -1));
+        btnAtras.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
+        btnAtras.setText("Atras");
+        btnAtras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAtrasActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 440, -1, -1));
 
-        jButton2.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
-        jButton2.setText("Registrar Cliente");
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 400, -1, -1));
+        btnRegistrarCliente.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
+        btnRegistrarCliente.setText("Registrar Cliente");
+        btnRegistrarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistrarClienteActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnRegistrarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 400, -1, -1));
         jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 150, -1));
         jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 150, -1));
         jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 150, -1));
@@ -91,6 +102,20 @@ public class pantallaRegistroCliente extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnRegistrarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarClienteActionPerformed
+        String registrado;
+        JOptionPane.showMessageDialog(null,"Cliente Registrado con Exito");
+        this.dispose();
+        PI = new PantallaInicio();
+        PI.setVisible(true);
+    }//GEN-LAST:event_btnRegistrarClienteActionPerformed
+
+    private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
+        PI = new PantallaInicio();
+        PI.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnAtrasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -132,8 +157,8 @@ public class pantallaRegistroCliente extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Fondo;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btnAtras;
+    private javax.swing.JButton btnRegistrarCliente;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
